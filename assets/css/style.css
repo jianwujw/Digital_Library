@@ -1,0 +1,47 @@
+.background{
+    background-color: rgb(53, 54, 58);
+
+}
+h1{
+    color:white
+}
+p{
+    color:white
+}
+label{
+    color:white
+}
+.topbar{
+    border: 10% solid;
+    border-radius: 10%;
+    position:sticky;
+    text-align:left;
+    
+    
+}
+.topbar inline{
+    display: inline-block;
+    padding-left: 2%;
+}
+
+.content {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    margin-left: 2%;
+    inline-size: 250px;
+    display: inline-block;
+}
+.content hw{
+    margin:auto;
+    word-break: break-all;
+    
+}
+
+img {
+    width: 250px; /* Set a small width */
+}
+
+.test{
+    padding: 1%;
+}

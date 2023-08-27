@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="quicksearch">
+        <form method="post" action="/quicksearch/">{% csrf_token %}
+            <label for="search"></label>
+            <input type="text" id="search" placeholder="Search" name = "input" class="form-control">
+        </form>
+    </div>
+    <div class="advancedsearch">
+        <inline><div><a href = '/search/a'>A</a></div></inline>
+        <inline><div><a href = '/search/b'>B</a></div></inline>
+        <inline><div><a href = '/search/c'>C</a></div></inline>
+        <inline><div><a href = '/search/d'>D</a></div></inline>
+        <inline><div><a href = '/search/e'>E</a></div></inline>
+        <inline><div><a href = '/search/f'>F</a></div></inline>
+        <inline><div><a href = '/search/g'>G</a></div></inline>
+        <inline><div><a href = '/search/h'>H</a></div></inline>
+        <inline><div><a href = '/search/i'>I</a></div></inline>
+        <inline><div><a href = '/search/j'>J</a></div></inline>
+        <inline><div><a href = '/search/k'>K</a></div></inline>
+        <inline><div><a href = '/search/l'>L</a></div></inline>
+        <inline><div><a href = '/search/m'>M</a></div></inline>
+        <inline><div><a href = '/search/n'>N</a></div></inline>
+        <inline><div><a href = '/search/o'>O</a></div></inline>
+        <inline><div><a href = '/search/p'>P</a></div></inline>
+        <inline><div><a href = '/search/q'>Q</a></div></inline>
+        <inline><div><a href = '/search/r'>R</a></div></inline>
+        <inline><div><a href = '/search/s'>S</a></div></inline>
+        <inline><div><a href = '/search/t'>T</a></div></inline>
+        <inline><div><a href = '/search/u'>U</a></div></inline>
+        <inline><div><a href = '/search/v'>V</a></div></inline>
+        <inline><div><a href = '/search/w'>W</a></div></inline>
+        <inline><div><a href = '/search/z'>X</a></div></inline>
+        <inline><div><a href = '/search/y'>Y</a></div></inline>
+        <inline><div><a href = '/search/z'>Z</a></div></inline>
+    </div>
+    {% for key,value in bookDict.items %} 
+    <div class ="searchresults">
+        <a href="/content/{{key}}"> <img src = '/{{value.pop}}/{{value.0}}'> </a>
+        {{value.pop}}
+    </div>
+
+    {% endfor %}
+
+</body>
+</html>

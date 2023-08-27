@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content</title>
+</head>
+<body>
+    {% load template %}
+    {%include 'navbar.html'%} 
+    <div class="wrapper">
+        <div class= "contentIMG">
+        {%for key,value in images.items%}           
+            <img src="/{{root.0}}/{{value.0}}">
+        {%endfor%}     
+        </div>
+        <div>
+            <div><p>Name: {{infoDict.0.work_title}}</p></div>
+            <div><p>Page: {{infoDict.0.pages}}</p></div>
+            <div><p>Publish Date: {{infoDict.0.publish_date}}</p></div>
+            <div><p>Publisher: {{infoDict.0.publisher}}</p></div>
+            <div><p>Subjects: {% for x in infoDict.0.subjects %}{{ x }}{% if not loop.last %}, {% endif %}{% endfor %}</p></div>
+
+
+        </div>
+    </div>
+
+    <div class="content">
+    {%for key,value in images.items%}      
+        {%for image in value%}
+            
+            <div class="contentThumbnail">
+                <a href = "/content/{{selection.0}}/{{forloop.counter0}}"><img src="/{{root.0}}/{{image}}" loading="lazy" ></a>
+                {{forloop.counter}}
+            </div>   
+        {%endfor%}
+    {%endfor%}
+
+    </div>  
+
+</body>
+</html>
